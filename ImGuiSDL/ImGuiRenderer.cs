@@ -452,7 +452,7 @@ public unsafe class ImGuiRenderer : IDisposable
 					if (imCmd->TextureId != texture)
 					{
 						texture = imCmd->TextureId;
-						SDL_BindGPUFragmentSamplers(pass, 0, [new() { sampler = sampler, texture = fontTexture }], 1);
+						SDL_BindGPUFragmentSamplers(pass, 0, [new() { sampler = sampler, texture = texture }], 1);
 					}
 
 					SDL_SetGPUScissor(pass, new()

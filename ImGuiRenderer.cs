@@ -307,7 +307,7 @@ public unsafe class ImGuiRenderer : IDisposable
 
 	/// <summary>
 	/// Adds a UserCallback method to the current Window Draw List.
-	/// This wraps <see cref="ImDrawListPtr.AddCallback(nint, nint)"> as it
+	/// This wraps <see cref="ImDrawListPtr.AddCallback(nint, nint)"/> as it
 	/// doesn't work gracefully with C# by default.
 	/// </summary>
 	public void AddUserCallback(UserCallback callback, nint? userData = null)

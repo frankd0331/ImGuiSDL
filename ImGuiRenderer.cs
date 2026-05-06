@@ -3,7 +3,8 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Numerics;
 using ImGuiNET;
-using static SDL3.SDL;
+using SDL;
+using static SDL.SDL3;
 
 namespace ImGuiSDL;
 
@@ -25,7 +26,7 @@ public unsafe class ImGuiRenderer : IDisposable
 	/// <summary>
 	/// SDL Window
 	/// </summary>
-	public readonly nint Window;
+	public readonly SDL_Window *Window;
 
 	/// <summary>
 	/// ImGui Context
@@ -49,7 +50,7 @@ public unsafe class ImGuiRenderer : IDisposable
 	private ushort[] indices = [];
 	private readonly List<UserCallback> callbacks = [];
 
-	public ImGuiRenderer(nint sdlGpuDevice, nint sdlWindow, nint imGuiContext)
+	public ImGuiRenderer(nint sdlGpuDevice, SDL_Window *sdlWindow, nint imGuiContext)
 	{
 		var io = ImGui.GetIO();
 
